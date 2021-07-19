@@ -5,9 +5,19 @@ var btnInput = document.querySelector("#btn")
 var pallindromeDiv = document.querySelector("#pallindrome")
 var notPallindromeDiv = document.querySelector("#not-pallindrome")
 
-btnInput.addEventListener("click",clickHandler)
+var loadingGIF = document.querySelector("#timer-img")
+
+btnInput.addEventListener("click",loadingOn)
+
+function loadingOn(){
+    loadingGIF.classList.remove("hidden")
+    pallindromeDiv.classList.add("hidden")
+    notPallindromeDiv.classList.add("hidden")
+    setTimeout(clickHandler, 2000)
+}
 
 function clickHandler(){
+    loadingGIF.classList.add("hidden")
     var dateInput = date.value;
     var year = dateInput.slice(0,4);
     var month = dateInput.slice(5,7);
