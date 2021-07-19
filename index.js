@@ -19,9 +19,9 @@ function clickHandler(){
     var reverseOne = formatOne.split("").reverse().join("");
     var reverseTwo = formatTwo.split("").reverse().join("");
     var reverseThree = formatThree.split("").reverse().join("");
-    
+
     if (dateInput.length > 0){
-        if (formatOne === reverseOne){
+        if (formatOne === reverseOne || formatTwo === reverseThree || formatThree === reverseThree){
             pallindromeDiv.classList.remove("hidden")
             notPallindromeDiv.classList.add("hidden")
         }else{
