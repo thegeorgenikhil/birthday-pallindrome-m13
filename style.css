@@ -3,7 +3,120 @@
 
 body{
     margin: 3rem;
-    background-color: #ff4d6d;
-    color: white;
     font-family: "Gilroy";
+    color: white;
+}
+
+header{
+    background-color:#ee2b4f ;
+    border-radius: 20px 20px 0 0;
+    
+}
+
+.navbar{
+    border-bottom: 1px solid white;
+    display: flex;
+    padding: 1rem;
+    font-size: 20px;
+}
+
+.theme-change{
+    width: 75%;
+}
+
+.repo-link{
+    width: 25%;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.hero{
+    margin: 5rem;
+    display: flex;
+    
+}
+
+.heading{
+    font-size: 3rem;
+}
+
+
+.left-hero-container{
+    min-width: 700px;
+}
+
+.hero-img{
+    display: inline-block;
+    width: 300px;
+    margin-left: 5rem;
+    
+}
+
+.button-primary{
+    padding: 0.5rem 2rem;
+    border-radius: 40px;
+    background-color:white;
+    color: #ff4d6d ;
+    font-weight: 900;
+    display: inline-block;
+    margin-top: 1rem,;
+}
+
+
+.interface{
+    width: 600px;
+    margin: auto;
+    color: black;
+    text-align: center;
+
+}
+
+
+.footer{
+    background-color: #ee2b4f;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0 0 20px 20px;
+    margin-top: 3rem;
+}
+
+.social-links{
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: .5rem;
+}
+
+.link-div{
+    padding: 1rem;
+}
+
+.legal{
+    color: white;
+}
+
+.input-container{
+    margin: 2rem 0;
+}
+.date-input{
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    padding: 0.5rem 2rem;
+    border: 3px solid #ff4d6d ;
+}
+
+.input-button{
+    background-color:#ff4d6d ;
+    width: 50px;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 40px;
+    color: white;
+    font-weight: 700;
+}
+
+.hidden{
+    display: none;
 }
