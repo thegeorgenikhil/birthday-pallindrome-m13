@@ -1,23 +1,23 @@
-var date = document.querySelector("#date")
-var btnInput = document.querySelector("#btn")
+var date = document.querySelector("#date");
+var btnInput = document.querySelector("#btn");
 
 
-var pallindromeDiv = document.querySelector("#pallindrome")
-var notPallindromeDiv = document.querySelector("#not-pallindrome")
+var pallindromeDiv = document.querySelector("#pallindrome");
+var notPallindromeDiv = document.querySelector("#not-pallindrome");
 
-var loadingGIF = document.querySelector("#timer-img")
+var loadingGIF = document.querySelector("#timer-img");
 
-btnInput.addEventListener("click",loadingOn)
+btnInput.addEventListener("click",loadingOn);
 
 function loadingOn(){
-    loadingGIF.classList.remove("hidden")
-    pallindromeDiv.classList.add("hidden")
-    notPallindromeDiv.classList.add("hidden")
-    setTimeout(clickHandler, 2000)
+    loadingGIF.classList.remove("hidden");
+    notPallindromeDiv.innerText="";
+    pallindromeDiv.innerHTML = "";
+    setTimeout(clickHandler, 2000);
 }
 
 function clickHandler(){
-    loadingGIF.classList.add("hidden")
+    loadingGIF.classList.add("hidden");
     var dateInput = date.value;
     var year = dateInput.slice(0,4);
     var month = dateInput.slice(5,7);
@@ -32,11 +32,9 @@ function clickHandler(){
 
     if (dateInput.length > 0){
         if (formatOne === reverseOne || formatTwo === reverseThree || formatThree === reverseThree){
-            pallindromeDiv.classList.remove("hidden")
-            notPallindromeDiv.classList.add("hidden")
+            pallindromeDiv.innerText = "Whoa!!! Your birthdate is palindrome"
         }else{
-            notPallindromeDiv.classList.remove("hidden")
-            pallindromeDiv.classList.add("hidden")
-        }
-    }
-}
+            notPallindromeDiv.innerText = "Awww! Your birthdate is not palindrome.";
+        };
+    };
+};
