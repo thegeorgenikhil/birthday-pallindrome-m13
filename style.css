@@ -2,7 +2,7 @@
 
 
 body{
-    margin: 3rem;
+    margin: 1rem;
     font-family: "Gilroy";
     color: white;
 }
@@ -20,9 +20,6 @@ header{
     font-size: 20px;
 }
 
-.theme-change{
-    width: 75%;
-}
 
 .repo-link{
     width: 25%;
@@ -40,17 +37,18 @@ header{
 }
 
 .heading{
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 
-.left-hero-container{
-    min-width: 700px;
+.hero-container{
+    max-width: 700px;
+    margin: auto;
 }
 
 .hero-img{
     display: inline-block;
-    width: 300px;
+    max-width: 300px;
     margin-left: 5rem;
     
 }
@@ -62,12 +60,12 @@ header{
     color: #ff4d6d ;
     font-weight: 900;
     display: inline-block;
-    margin-top: 1rem,;
+    margin: 2rem 0;
 }
 
 
 .interface{
-    width: 600px;
+    max-width: 600px;
     margin: auto;
     color: black;
     text-align: center;
