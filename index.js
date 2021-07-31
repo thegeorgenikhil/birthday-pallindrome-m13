@@ -7,8 +7,8 @@ var notPallindromeDiv = document.querySelector("#not-pallindrome");
 var loadingGIF = document.querySelector("#timer-img");
 btnInput.addEventListener("click", loadingOn);
 
-var $31days = [1, 5, 7, 8, 10, 12];
-var $30days = [2,4,6,9,11];
+var $31days = [1,3,5, 7, 8, 10, 12];
+var $30days = [4,6,9,11];
 
 function loadingOn() {
   loadingGIF.classList.remove("hidden");
@@ -61,6 +61,7 @@ function checkForward(day,month,year){
     var  noOfDays = 0;
     while (month < 13){
         noOfDays += 1
+        console.log(day,month,year)
         var formatOne = lessThanTenCheck(year) + lessThanTenCheck(month) + lessThanTenCheck(day);
         var formatTwo = lessThanTenCheck(month) + lessThanTenCheck(day) + lessThanTenCheck(year);
         var formatThree = lessThanTenCheck(month) + lessThanTenCheck(day) + lessThanTenCheck(year).slice(2, 4);
@@ -78,7 +79,7 @@ function checkForward(day,month,year){
         }
         else {
             day = day + 1
-            if (day > maxDate(month)){
+            if (day > maxDate(month,year)){
                 day = 1
                 month = month + 1
                 if (month > 12){
@@ -114,7 +115,7 @@ function checkBackward(day,month,year){
         else{
             day = day - 1 
             if (day < 1){
-                day = maxDate(month-1)
+                day = maxDate(month-1,year)
                 month = month - 1;
                 if (month < 1){
                     year = year - 1
@@ -126,15 +127,19 @@ function checkBackward(day,month,year){
     }
 }
 
-function maxDate(month){
+function maxDate(month,year){
+    var maxDate = 31
     if ($31days.includes(month)){
-        var maxDate = 31
+        maxDate = 31
     }
     else if ($30days.includes(month)){
-        var maxDate = 30
+        maxDate = 30
+    }
+    else if (checkYear(year)){
+        maxDate = 29
     }
     else{
-        var maxDate = 28
+        maxDate = 28
     }
     return maxDate
 }
@@ -152,6 +157,27 @@ function lessThanTenCheck(number){
 function checkFormat(format) {
     var reverseFormat = format.split("").reverse().join("");
     return reverseFormat === format;
+}
+
+function checkYear(year){
+    var isLeap = true;
+    if (year % 4 === 0){
+        if (year % 100 === 0){
+            if (year % 400 === 0){
+                isLeap = true;
+            }
+            else{
+                isLeap = false;
+            }
+        }
+        else{
+            isLeap = true;
+        }
+    }
+    else{
+        isLeap = false;
+    }
+    return isLeap
 }
 
 
