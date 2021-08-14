@@ -30,6 +30,7 @@ function pallindromeOrNot(dateInput) {
   var formatOne = year + month + day;
   var formatTwo = month + day + year;
   var formatThree = month + day + year.slice(2, 4);
+  var formatFour = day + month + year
 
   if (dateInput.length > 0) {
     if (checkFormat(formatOne)) {
@@ -41,6 +42,9 @@ function pallindromeOrNot(dateInput) {
     else if (checkFormat(formatThree)) {
       pallindromeDiv.innerText = "Whoa!!! Your birthdate is palindrome in the format "+month+"-"+day+"-"+year.slice(2,4);
     } 
+    else if (checkFormat(formatFour)) {
+        pallindromeDiv.innerText = "Whoa!!! Your birthdate is palindrome in the format "+day+"-"+month+"-"+year;
+      } 
     else {
         day = parseInt(day)
         year = parseInt(year)
@@ -65,17 +69,22 @@ function checkForward(day,month,year){
         var formatOne = lessThanTenCheck(year) + lessThanTenCheck(month) + lessThanTenCheck(day);
         var formatTwo = lessThanTenCheck(month) + lessThanTenCheck(day) + lessThanTenCheck(year);
         var formatThree = lessThanTenCheck(month) + lessThanTenCheck(day) + lessThanTenCheck(year).slice(2, 4);
+        var formatFour = lessThanTenCheck(day) + lessThanTenCheck(month) + lessThanTenCheck(year);
         if (checkFormat(formatOne)){
             formatOne = lessThanTenCheck(year) + "-" + lessThanTenCheck(month) + "-" + lessThanTenCheck(day);
-            return [formatOne,noOfDays]
+            return [formatOne,noOfDays];
         }
         else if (checkFormat(formatTwo)){
             formatTwo = lessThanTenCheck(month) + "-" + lessThanTenCheck(day) + "-" + lessThanTenCheck(year);
-            return [formatTwo,noOfDays]
+            return [formatTwo,noOfDays];
         }
         else if (checkFormat(formatThree)){
             formatThree = lessThanTenCheck(month) + "-" + lessThanTenCheck(day) + "-" + lessThanTenCheck(year).slice(2, 4);
-            return [formatThree,noOfDays]
+            return [formatThree,noOfDays];
+        }
+        else if (checkFormat(formatFour)){
+            formatThree = lessThanTenCheck(day) + "-" + lessThanTenCheck(month) + "-" + lessThanTenCheck(year);
+            return [formatFour,noOfDays];
         }
         else {
             day = day + 1
@@ -100,6 +109,7 @@ function checkBackward(day,month,year){
         var formatOne = lessThanTenCheck(year) + lessThanTenCheck(month) + lessThanTenCheck(day);
         var formatTwo = lessThanTenCheck(month) + lessThanTenCheck(day) + lessThanTenCheck(year);
         var formatThree = lessThanTenCheck(month) + lessThanTenCheck(day) + lessThanTenCheck(year).slice(2, 4);
+        var formatFour = lessThanTenCheck(day) + lessThanTenCheck(month) + lessThanTenCheck(year);
         if (checkFormat(formatOne)){
             formatOne = lessThanTenCheck(year) + "-" + lessThanTenCheck(month) + "-" + lessThanTenCheck(day);
             return [formatOne,noOfDays]
@@ -111,6 +121,10 @@ function checkBackward(day,month,year){
         else if (checkFormat(formatThree)){
             formatThree = lessThanTenCheck(month) + "-" + lessThanTenCheck(day) + "-" + lessThanTenCheck(year).slice(2, 4);
             return [formatThree,noOfDays]
+        }
+        else if (checkFormat(formatFour)){
+            formatThree = lessThanTenCheck(day) + "-" + lessThanTenCheck(month) + "-" + lessThanTenCheck(year);
+            return [formatFour,noOfDays];
         }
         else{
             day = day - 1 
