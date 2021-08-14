@@ -112,6 +112,7 @@ header{
     border-radius: 40px;
     color: white;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .hidden{
